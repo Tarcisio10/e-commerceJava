@@ -16,11 +16,7 @@ public class MainPadrao {
 
     private ExemploService service = new ExemploService();
 
-    public String executar(String nome, LocalDate data, int numero) {
-        Exemplo dado = service.obterDados(nome, data, numero);
-    }
-
-    public static void main(String[] args) {
+    public void executar() {
         Scanner input = new Scanner(System.in);
         System.out.println("Nome: ");
         String nome = input.nextLine();
@@ -28,6 +24,15 @@ public class MainPadrao {
         String dataStr = input.nextLine();
         System.out.println("1 - 99: ");
         String numeroStr = input.nextLine();
+
+        Exemplo dado = service.obterDados(nome, LocalDate.parse(dataStr), Integer.parseInt(numeroStr));
+
+        System.out.println("Dados digitados: Nome: " + dado.getNome() + " Da ta: " + dado.getDataNascimento() + " Numero: " + dado.getNumero());
+    }
+
+    public static void main(String[] args) {
+        MainPadrao main = new MainPadrao();
+        main.executar();
 
     }
 }

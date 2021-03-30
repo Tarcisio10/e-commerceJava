@@ -12,11 +12,12 @@ import java.time.LocalDate;
  * @author tbn
  */
 public class ExemploService {
-    public Exemplo obterDados(String nome, LocalDate dataNascimento, int numero){
+
+    public Exemplo obterDados(String nome, LocalDate dataNascimento, int numero) {
         Exemplo dado = new Exemplo();
-        dado.setNome();
+        dado.setNome(nome + " processado ");
         dado.setDataNascimento(dataNascimento);
-        dado.setNumero(numero);
+        dado.setNumero(numero % 6);
         return dado;
     }
-}           
+}

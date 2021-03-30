@@ -40,7 +40,5 @@ public class Exemplo {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
-    
-    
+
 }
